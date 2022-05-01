@@ -12,5 +12,5 @@ Cells behave properly and are able to reproduce Game of Life's signature structu
 
 - Project was made using SFML-2.5.1 (x64)
 - It uses sfml's graphics, window and system .lib files, so you need to put those in the project space (and their debug counterparts, for Debug builds)
-- Put `</path/to/sfml/>/include` in General > Aditional Include Directiories
-- Put `<sfml-install-path>/lib` in Linker > General > Aditional Library Directiories
+- Put `<your path to sfml>/include` in General > Aditional Include Directiories
+- Put `<your path to sfml>/lib` in Linker > General > Aditional Library Directiories
