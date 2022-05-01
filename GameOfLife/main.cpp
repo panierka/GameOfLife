@@ -5,7 +5,8 @@ int main()
     int screen_size_x = MAP_SIZE_X * CELL_SIZE;
     int screen_size_y = MAP_SIZE_Y * CELL_SIZE;
 
-    sf::RenderWindow window(sf::VideoMode(screen_size_x, screen_size_y), "Game of Life");
+    sf::RenderWindow window(sf::VideoMode(screen_size_x, screen_size_y), "Game of Life", sf::Style::Titlebar | sf::Style::Close);
+
     Simulation simulation;
 
     while (window.isOpen())
@@ -18,7 +19,7 @@ int main()
                 window.close();
             }
         }
-
+        
         simulation.update(window);
     }
     
