@@ -1,4 +1,5 @@
 #include "simulation.h"
+#include <time.h>
 
 int main()
 {
@@ -7,6 +8,7 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(screen_size_x, screen_size_y), "Game of Life", sf::Style::Titlebar | sf::Style::Close);
 
+    srand(time(NULL));
     Simulation simulation;
 
     while (window.isOpen())
@@ -20,7 +22,10 @@ int main()
             }
         }
         
-        simulation.update(window);
+        simulation.update_display(window);
+
+        sf::sleep(sf::seconds(1.f / 40.f));
+        simulation.update_cells();
     }
     
     return 0;

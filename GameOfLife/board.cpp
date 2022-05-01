@@ -5,11 +5,16 @@ Board::Board(int size_x, int size_y)
 	this->size_x = size_x;
 	this->size_y = size_y;
 
-	size_t size = (size_t)size_x * size_y;
-	matrix = new int[size];
+	int size = size_x * size_y;
+	matrix = new int[size] {};
 }
 
-int Board::get(int x, int y)
+Board::~Board()
+{
+	delete matrix;
+}
+
+int Board::get_element(int x, int y)
 {
 	if (!is_in_bounds(x, y)) {
 		return 0;
@@ -19,7 +24,7 @@ int Board::get(int x, int y)
 	return matrix[index];
 }
 
-void Board::set(int x, int y, int value)
+void Board::set_element(int x, int y, int value)
 {
 	if (!is_in_bounds(x, y)) {
 		return;
@@ -27,6 +32,16 @@ void Board::set(int x, int y, int value)
 
 	int index = get_index(x, y);
 	matrix[index] = value;
+}
+
+int Board::get_size_x()
+{
+	return this->size_x;
+}
+
+int Board::get_size_y()
+{
+	return this->size_y;
 }
 
 bool Board::is_in_bounds(int x, int y)
