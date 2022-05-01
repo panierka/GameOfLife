@@ -24,7 +24,7 @@ int main()
         
         simulation.update_display(window);
 
-        sf::sleep(sf::seconds(1.f / 40.f));
+        sf::sleep(sf::seconds(1.f / 11.f));
         simulation.update_cells();
     }
     
